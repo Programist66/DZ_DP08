@@ -17,7 +17,7 @@ namespace DZ_DP08
 
         public IStateOven SetTimerOven(float minutes)
         {
-            Console.WriteLine($"Духовка включена\nЗаданная температура: {temperature}\nТаймер установлен на {minutes} минут");
+            Console.WriteLine($"Таймер установлен на {minutes} минут");
             return new TimerStateOven(minutes, temperature);
         }
 
@@ -29,7 +29,7 @@ namespace DZ_DP08
 
         public IStateOven TurnOnOven(int temperature)
         {
-            Console.WriteLine("Духовка уже включена");
+            Console.WriteLine($"Духовка включена на температуру {temperature}");
             return this;
         }
 

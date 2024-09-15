@@ -3,12 +3,12 @@
 Oven oven = new Oven();
 while (true)
 {
-    Console.WriteLine("Выберите действие:");
     Console.WriteLine("1. Показать состояние духовки");
     Console.WriteLine("2. Включить духовку");
     Console.WriteLine("3. Включить духовку с таймером");
     Console.WriteLine("4. Выключить духовку");
     Console.WriteLine("5. Выйти");
+    Console.Write("Выберите действие: ");
 
     Int32.TryParse(Console.ReadLine(), out int choice);
     int temperature;
@@ -25,6 +25,9 @@ while (true)
             oven.TurnOn(temperature);
             break;
         case 3:
+            Console.Write("Введите температуру (180-240°C): ");
+            Int32.TryParse(Console.ReadLine()!, out temperature);
+            oven.TurnOn(temperature);
             Console.Write("Введите время в минутах: ");
             float.TryParse(Console.ReadLine()!, out minutes);
             Console.WriteLine(minutes);
